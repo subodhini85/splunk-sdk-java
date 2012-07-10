@@ -171,6 +171,10 @@
         <compile-example name="spurl" classpath="classpath.examples"/>
     </target>
 
+    <target name="compile-example-storm" depends="dist-libs">
+        <compile-example name="storm" classpath="classpath.examples"/>
+    </target>
+
     <target name="compile-example-tail" depends="dist-libs">
         <compile-example name="tail" classpath="classpath.examples"/>
     </target>
@@ -262,6 +266,7 @@
         dist-example-search-saved,
         dist-example-search-simple,
         dist-example-spurl,
+        dist-example-storm,
         dist-example-tail"/>
 
     <!-- Common dist action for all examples -->
@@ -361,6 +366,11 @@
 
     <target name="dist-example-spurl" depends="compile-example-spurl">
         <dist-example name="spurl" 
+         classpath="../splunk.jar ../splunk-sdk.jar"/>
+    </target>
+
+    <target name="dist-example-storm" depends="compile-example-storm">
+        <dist-example name="storm" 
          classpath="../splunk.jar ../splunk-sdk.jar"/>
     </target>
 
